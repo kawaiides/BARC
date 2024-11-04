@@ -127,7 +127,7 @@ setup(
     author="The Hugging Face team (past and future)",
     author_email="lewis@huggingface.co",
     description="The Alignment Handbook",
-    long_description=open("README.md", "r", encoding="utf-8").read(),
+    long_description=open("./README.md", "r", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     keywords="nlp deep learning rlhf llm",
     license="Apache",
