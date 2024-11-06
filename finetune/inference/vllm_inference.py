@@ -52,11 +52,11 @@ from vllm.lora.request import LoRARequest
 
 if LORA_DIR:
     llm = LLM(model=BASE_MODEL, enable_lora=True, max_lora_rank=256, max_model_len=12000,
-            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL, rope_scaling={"type": "extended", "factor": 8.0})
+            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL)
     lora_request=LoRARequest("barc_adapter", 1, LORA_DIR)
 else:
     llm = LLM(model=BASE_MODEL, enable_lora=False, max_model_len=12000,
-            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL, rope_scaling={"type": "extended", "factor": 8.0})
+            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL)
 
 import datetime
 datetime_str = datetime.datetime.now().strftime("%m%d%H%M%S%f")
