@@ -34,13 +34,13 @@ from vllm.lora.request import LoRARequest
 
 if LORA_DIR:
     llm = LLM(model=BASE_MODEL, enable_lora=True, max_lora_rank=64, max_model_len=12000,
-            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL)
+            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL, rope_scaling={"type": "extended", "factor": 8.0})
     lora_request=LoRARequest("barc_adapter", 1, LORA_DIR)
     saving_file = f"{problem_file.replace('.jsonl', '')}_{LORA_DIR.split('/')[-1]}_{datetime_str}.jsonl"
     print(f"Saving to {saving_file}")
 else:
     llm = LLM(model=BASE_MODEL, enable_lora=False, max_model_len=16000,
-            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL)
+            enable_prefix_caching=True, tensor_parallel_size=TENSOR_PARALLEL, rope_scaling={"type": "extended", "factor": 8.0})
     lora_request = None
     if 'checkpoint' in BASE_MODEL.split('/')[-1]:
         model_name = BASE_MODEL.split('/')[-2] + "_" + BASE_MODEL.split('/')[-1]
