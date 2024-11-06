@@ -6,7 +6,7 @@ TEMPERATURE = 0.8
 # BASE_MODEL = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 # BASE_MODEL = "./barc-llama3.1-8b-instruct-lora64-induction-gpt4-desc-llama-20k_lr2e-4_epoch3_merged"
 # BASE_MODEL = "./barc-llama3.1-8b-instruct-lora64-induction-gpt4-desc-4omini20k_lr2e-4_epoch3_merged"
-BASE_MODEL = "./barc-llama3.1-8b-instruct-lora64-induction-gpt4mini20k-llama20k_lr2e-4_epoch3_merged"
+BASE_MODEL = "/kaggle/input/llama-3-1-arc-heavy-induction-8b"
 # BASE_MODEL = "barc0/barc-llama3.1-8b-instruct-fft-sft-induction35k_lr1e-5_epoch2"
 # BASE_MODEL = "data/barc-llama3.1-8b-instruct-fft-induction_gpt4omini100k_lr1e-5_epoch2"
 # LORA_DIR = "data/barc-llama3.1-8b-instruct-sft-qlora-v0.0.3"
@@ -41,7 +41,7 @@ data = []
 # problem_file = "./arc_problems_selected-train-subset50_50_extra_newline.jsonl"
 # problem_file = "./arc_problems_train_327_extra_newline.jsonl"
 # problem_file = "./arc_problems_validation_400_extra_newline.jsonl"
-problem_file = "./arc_problems_validation_400_extra_newline_v2.jsonl"
+problem_file = "/kaggle/working/arc-agi_test_challenges.jsonl
 
 with open(problem_file) as f:
     for line in f:
