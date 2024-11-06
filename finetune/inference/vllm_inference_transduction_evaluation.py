@@ -1,5 +1,5 @@
 # BASE_MODEL = 'barc0/heavy-barc-llama3.1-8b-ins-fft-transduction_lr1e-5_epoch3'
-BASE_MODEL = 'barc0/engineer1-heavy-barc-llama3.1-8b-ins-fft-transduction_lr1e-5_epoch3'
+BASE_MODEL = '/kaggle/input/llama-3-1-arc-heavy-transduction-8b'
 
 LORA_DIR = None
 # LORA_DIR = 'barc0/heavy-barc-llama3.1-8b-instruct-lora64-testtime-finetuning'
@@ -18,7 +18,7 @@ else:
 
 import json
 data = []
-problem_file = "../../data_processing/validation_transduction_prompt.jsonl"
+problem_file = "/kaggle/working/arc-agi_test_challenges.jsonl"
 
 import datetime
 datetime_str = datetime.datetime.now().strftime("%m%d%H%M%S%f")
