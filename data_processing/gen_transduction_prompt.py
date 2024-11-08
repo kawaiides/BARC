@@ -1,28 +1,28 @@
-from datasets import load_dataset
-from datasets import Dataset
+#from datasets import load_dataset
+#from datasets import Dataset
 import json
-from arc import validation_problems, train_problems
+#from arc import validation_problems, train_problems
 
 
-def parse_examples(text):
-    # Split the text into training and test sections
-    train_text, test_text = text.split("***Test example:***")
+# def parse_examples(text):
+#     # Split the text into training and test sections
+#     train_text, test_text = text.split("***Test example:***")
 
-    # Parse training examples
-    train_examples = []
-    for example in train_text.split("[Example"):
-        if "Input:" in example and "Output:" in example:
-            input_text = example.split("Input:")[1].split("Output:")[0].strip().strip('`')
-            output_text = example.split("Output:")[1].strip().strip("`")
-            input_lines = [line.strip() for line in input_text.split("\n") if line.strip()]
-            output_lines = [line.strip() for line in output_text.split("\n") if line.strip()]
-            train_examples.append(("\n".join(input_lines), "\n".join(output_lines)))
+#     # Parse training examples
+#     train_examples = []
+#     for example in train_text.split("[Example"):
+#         if "Input:" in example and "Output:" in example:
+#             input_text = example.split("Input:")[1].split("Output:")[0].strip().strip('`')
+#             output_text = example.split("Output:")[1].strip().strip("`")
+#             input_lines = [line.strip() for line in input_text.split("\n") if line.strip()]
+#             output_lines = [line.strip() for line in output_text.split("\n") if line.strip()]
+#             train_examples.append(("\n".join(input_lines), "\n".join(output_lines)))
 
-    # Parse test example
-    test_lines = [line.strip() for line in test_text.split("\n") if line.strip() and "output" not in line.lower() and 'Input' not in line]
-    test_example = "\n".join(test_lines)
+#     # Parse test example
+#     test_lines = [line.strip() for line in test_text.split("\n") if line.strip() and "output" not in line.lower() and 'Input' not in line]
+#     test_example = "\n".join(test_lines)
 
-    return train_examples, [test_example]
+#     return train_examples, [test_example]
 
 
 # DEFAULT_SYSTEM_PROMPT = "You are an world-class puzzle solver who are extremely good at spotting patterns and solving puzzles. You are also an expert Python programmer who can write code to solve puzzles."
@@ -88,7 +88,13 @@ def problem_grids_to_str(problem):
 
 if __name__ == "__main__":
 
+    validation_problems = []
 
+    # Open the file in read mode
+    with open("/kaggle/working/arc-agi_test_challenges.jsonl", "r") as file:
+        for line in file:
+            # Parse the JSON object on each line and append to the validation_problems list
+            validation_problems.append(json.loads(line.strip()))
     
     PROBLEMS = validation_problems
     all_data = []
