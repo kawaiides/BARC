@@ -9,7 +9,7 @@ BASE_MODEL = '/kaggle/input/llama-3-1-arc-heavy-transduction-8b'
 LORA_DIR = None
 # LORA_DIR = 'barc0/heavy-barc-llama3.1-8b-instruct-lora64-testtime-finetuning'
 
-BATCH_SIZE = 20
+BATCH_SIZE = 1
 BEST_OF = 2
 
 # How many gpus you are using
@@ -87,6 +87,8 @@ for d in tqdm(data):
                                      n=tmp_batch_size
                                      #, use_beam_search=True
                                      , best_of=BATCH_SIZE, top_p=1.0)
+    sampling_params = SamplingParams(temperature=TEMPERATURE, max_tokens=1536,
+                                     n=tmp_batch_size)
     outputs = llm.generate(
         inputs,
         sampling_params,
