@@ -26,7 +26,7 @@ import os
 current_path = os.getcwd()
 print("Current working directory:", current_path)
 
-BASE_MODEL = 'llama-3-1-arc-heavy-induction-8b'
+BASE_MODEL = 'kaggle/working/llama-3-1-arc-heavy-induction-8b'
 
 LORA_DIR = None
 # LORA_DIR = 'barc0/heavy-barc-llama3.1-8b-instruct-lora64-testtime-finetuning'
