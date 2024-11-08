@@ -40,7 +40,7 @@ else:
 
 import json
 data = []
-problem_file = "/kaggle/working/arc-agi_test_challenges_formatted.jsonl"
+problem_file = '/kaggle/working/arc-agi_test_challenges_formatted.jsonl'
 
 import datetime
 datetime_str = datetime.datetime.now().strftime("%m%d%H%M%S%f")
@@ -51,8 +51,6 @@ with open(problem_file) as f:
 
 from vllm import LLM, SamplingParams
 from vllm.lora.request import LoRARequest
-
-
 
 if LORA_DIR:
     llm = LLM(model=BASE_MODEL, enable_lora=True, max_lora_rank=64, max_model_len=12000,
@@ -71,14 +69,6 @@ else:
     saving_file = f"{problem_file.replace('.jsonl', '')}_{model_name}_{datetime_str}.jsonl"
 
 print('batch size:', BATCH_SIZE)
-
-
-import json
-data = []
-with open("/kaggle/working/arc-agi_test_challenges_formatted.jsonl") as f:
-    for line in f:
-        data.append(json.loads(line))
-
 
 from transformers import StoppingCriteria
 
