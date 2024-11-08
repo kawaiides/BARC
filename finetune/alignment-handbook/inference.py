@@ -26,7 +26,7 @@ import os
 current_path = os.getcwd()
 print("Current working directory:", current_path)
 
-BASE_MODEL = '/kaggle/input/llama-3-1-arc-heavy-induction-8b'
+BASE_MODEL = 'llama-3-1-arc-heavy-induction-8b'
 
 LORA_DIR = None
 # LORA_DIR = 'barc0/heavy-barc-llama3.1-8b-instruct-lora64-testtime-finetuning'
@@ -45,7 +45,7 @@ else:
 
 import json
 data = []
-problem_file = '/kaggle/working/arc-agi_test_challenges_formatted.jsonl'
+problem_file = 'arc-agi_test_challenges_formatted.jsonl'
 
 import datetime
 datetime_str = datetime.datetime.now().strftime("%m%d%H%M%S%f")
