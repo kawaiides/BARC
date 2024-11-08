@@ -70,7 +70,7 @@ time.sleep(5)
 from tqdm import tqdm
 all_responses = []
 for d in tqdm(data):
-    print(d)
+    #print(d)
     messages = d["messages"]
     assert messages[0]["role"] == "system"
     assert messages[1]["role"] == "user"
