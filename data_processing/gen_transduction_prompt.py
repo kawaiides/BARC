@@ -73,7 +73,6 @@ def grid_to_str(grid):
     return grid_str.strip()
 
 def problem_grids_to_str(problem):
-    print(problem)
     train_examples_strs = []
     for train_pair in problem['train']:
         train_x = grid_to_str(train_pair['input'])
@@ -100,8 +99,6 @@ if __name__ == "__main__":
     PROBLEMS = validation_problems
     all_data = []
     for arc_problem in PROBLEMS:
-        print(arc_problem.keys())
-        print(list(arc_problem.keys())[0])
         train_examples_strs, test_examples_strs = problem_grids_to_str(arc_problem[list(arc_problem.keys())[0]])
         if len(test_examples_strs) > 1:
             print(list(arc_problem.keys())[0])
