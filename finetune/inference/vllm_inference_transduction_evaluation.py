@@ -18,7 +18,7 @@ else:
 
 import json
 data = []
-problem_file = "arc-agi_test_challenges_formatted.jsonl"
+problem_file = "/kaggle/working/arc-agi_test_challenges_formatted.jsonl"
 
 import datetime
 datetime_str = datetime.datetime.now().strftime("%m%d%H%M%S%f")
