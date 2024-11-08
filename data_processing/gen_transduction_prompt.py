@@ -100,18 +100,19 @@ if __name__ == "__main__":
     PROBLEMS = validation_problems
     all_data = []
     for arc_problem in PROBLEMS:
-
-        train_examples_strs, test_examples_strs = problem_grids_to_str(arc_problem)
+        print(arc_problem.keys())
+        print(list(arc_problem.keys())[0])
+        train_examples_strs, test_examples_strs = problem_grids_to_str(arc_problem[list(arc_problem.keys())[0]])
         if len(test_examples_strs) > 1:
-            print(arc_problem.uid)
+            print(list(arc_problem.keys())[0])
 
         for i, test_examples_str in enumerate(test_examples_strs):
             question = make_problem_input_str(train_examples_strs, [test_examples_str])
             answer = f"The output grid for the test input grid is:\n\n```\n"
             
             all_data.append(convert_chat_format(question, answer))
-            all_data[-1]["uid"] = arc_problem.uid
-            all_data[-1]["answer"] = grid_to_str(arc_problem.test_pairs[i].y)
+            all_data[-1]["uid"] = list(arc_problem.keys())[0]
+            all_data[-1]["answer"] = grid_to_str(arc_problem[list(arc_problem.keys())[0]].test[i].output)
 
 
     print("==============input=============")
