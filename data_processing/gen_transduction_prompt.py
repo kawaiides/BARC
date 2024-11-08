@@ -75,13 +75,13 @@ def grid_to_str(grid):
 def problem_grids_to_str(problem):
     print(problem)
     train_examples_strs = []
-    for train_pair in problem.train:
-        train_x = grid_to_str(train.input)
-        train_y = grid_to_str(train.output)
+    for train_pair in problem['train']:
+        train_x = grid_to_str(train_pair['input'])
+        train_y = grid_to_str(train_pair['output'])
         train_examples_strs.append((train_x, train_y))
     test_examples_strs = []
-    for test_pair in problem.test:
-        test_x = grid_to_str(test_pair.input)
+    for test_pair in problem['test']:
+        test_x = grid_to_str(test_pair['input'])
         test_examples_strs.append(test_x)
     
     return train_examples_strs, test_examples_strs
@@ -112,7 +112,7 @@ if __name__ == "__main__":
             
             all_data.append(convert_chat_format(question, answer))
             all_data[-1]["uid"] = list(arc_problem.keys())[0]
-            all_data[-1]["answer"] = grid_to_str(arc_problem[list(arc_problem.keys())[0]].test[i].output)
+            all_data[-1]["answer"] = grid_to_str(arc_problem[list(arc_problem.keys())[0]]['test'][i]['output'])
 
 
     print("==============input=============")
