@@ -120,7 +120,7 @@ for d in tqdm(data):
     if not aggregate_outputs:
         breakpoint()
     else:
-        print(aggregate_outputs[0])
+        #print(aggregate_outputs[0])
 
 
     # Print the outputs.
