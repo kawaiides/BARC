@@ -1,3 +1,8 @@
+import os
+
+current_path = os.getcwd()
+print("Current working directory:", current_path)
+
 # BASE_MODEL = 'barc0/heavy-barc-llama3.1-8b-ins-fft-transduction_lr1e-5_epoch3'
 BASE_MODEL = '/kaggle/input/llama-3-1-arc-heavy-transduction-8b'
 
