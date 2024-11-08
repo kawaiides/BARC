@@ -79,7 +79,9 @@ for d in tqdm(data):
     tmp_batch_size = BATCH_SIZE
     print(f"batch size: {tmp_batch_size}")
     sampling_params = SamplingParams(temperature=0, max_tokens=1536,
-                                     n=tmp_batch_size, use_beam_search=True, best_of=BATCH_SIZE, top_p=1.0)
+                                     n=tmp_batch_size
+                                     #, use_beam_search=True
+                                     , best_of=BATCH_SIZE, top_p=1.0)
     outputs = llm.generate(
         inputs,
         sampling_params,
