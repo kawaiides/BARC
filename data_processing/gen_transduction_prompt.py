@@ -74,13 +74,13 @@ def grid_to_str(grid):
 
 def problem_grids_to_str(problem):
     train_examples_strs = []
-    for train_pair in problem.train_pairs:
-        train_x = grid_to_str(train_pair.x)
-        train_y = grid_to_str(train_pair.y)
+    for train_pair in problem.train:
+        train_x = grid_to_str(train.input)
+        train_y = grid_to_str(train.output)
         train_examples_strs.append((train_x, train_y))
     test_examples_strs = []
-    for test_pair in problem.test_pairs:
-        test_x = grid_to_str(test_pair.x)
+    for test_pair in problem.test:
+        test_x = grid_to_str(test_pair.input)
         test_examples_strs.append(test_x)
     
     return train_examples_strs, test_examples_strs
