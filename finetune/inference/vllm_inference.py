@@ -41,7 +41,7 @@ data = []
 # problem_file = "./arc_problems_selected-train-subset50_50_extra_newline.jsonl"
 # problem_file = "./arc_problems_train_327_extra_newline.jsonl"
 # problem_file = "./arc_problems_validation_400_extra_newline.jsonl"
-problem_file = "/kaggle/working/arc-agi_test_challenges.jsonl"
+problem_file = "/kaggle/working/arc-agi_test_challenges_formatted.jsonl"
 
 with open(problem_file) as f:
     for line in f:
