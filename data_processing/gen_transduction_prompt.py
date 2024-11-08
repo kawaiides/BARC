@@ -73,6 +73,7 @@ def grid_to_str(grid):
     return grid_str.strip()
 
 def problem_grids_to_str(problem):
+    print(problem)
     train_examples_strs = []
     for train_pair in problem.train:
         train_x = grid_to_str(train.input)
