@@ -128,10 +128,10 @@ for d in tqdm(data):
     for outputs in aggregate_outputs:
         for output in outputs:
             prompt = output.prompt
-            print(f"Prompt: {prompt!r}")
+            # print(f"Prompt: {prompt!r}")
             for i in range(len(output.outputs)):
                 generated_text = output.outputs[i].text
-                # print(f"Generated text: {generated_text!r}\n")
+                print(f"Generated text: {generated_text!r}\n")
                 responses.append(generated_text)
 
     all_responses.append({"uid": d["uid"], "prompt":inputs , "responses": responses, "base_model": BASE_MODEL, "lora_dir": LORA_DIR})
