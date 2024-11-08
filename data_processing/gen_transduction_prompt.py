@@ -112,7 +112,9 @@ if __name__ == "__main__":
             
             all_data.append(convert_chat_format(question, answer))
             all_data[-1]["uid"] = list(arc_problem.keys())[0]
-            all_data[-1]["answer"] = grid_to_str(arc_problem[list(arc_problem.keys())[0]]['test'][i]['output'])
+            if 'output' in list(arc_problem[list(arc_problem.keys())[0]]['test'][i].keys()):
+                all_data[-1]["answer"] = grid_to_str(arc_problem[list(arc_problem.keys())[0]]['test'][i]['output'])
+            all_data[-1]["answer"] = answer
 
 
     print("==============input=============")
