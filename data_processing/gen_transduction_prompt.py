@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
 
     # write to jsonl
-    filename = "validation_transduction_prompt.jsonl"
+    filename = "arc-agi_test_challenges_formatted.jsonl"
     with open(filename, "w") as f:
         f.write("\n".join(json.dumps(p) for p in all_data))
     print(f"Saved to {filename}")
