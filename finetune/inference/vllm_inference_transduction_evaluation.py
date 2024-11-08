@@ -4,7 +4,7 @@ BASE_MODEL = '/kaggle/input/llama-3-1-arc-heavy-transduction-8b'
 LORA_DIR = None
 # LORA_DIR = 'barc0/heavy-barc-llama3.1-8b-instruct-lora64-testtime-finetuning'
 
-BATCH_SIZE = 20
+BATCH_SIZE = 1
 BEST_OF = 2
 
 # How many gpus you are using
