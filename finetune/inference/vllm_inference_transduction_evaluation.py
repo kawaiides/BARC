@@ -107,6 +107,7 @@ for d in tqdm(data):
 
     correct_task = []
     # parse output and compare to answer
+    print(responses)
     for i in range(BEST_OF):
         generated_text = responses[i]
         print(f"Generated text:\n{generated_text}\n")
